@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 
 	"github.com/fale/gofed/pkg/oraculum"
@@ -47,6 +48,7 @@ func table(cmd *cobra.Command, args []string) error {
 			return err
 		}
 		for _, project := range projects {
+			fmt.Printf("%v\n", project.Name)
 			var gslvl string
 			for g, v := range project.AccessGroups {
 				for _, n := range v {
@@ -64,9 +66,9 @@ func table(cmd *cobra.Command, args []string) error {
 				ftbfs37 = "YES"
 			}
 			table.Append([]string{project.Name, project.User.Name, gslvl, ftbfs37})
-			table.Render()
 		}
 	}
+	table.Render()
 
 	if err := scanner.Err(); err != nil {
 		return err
