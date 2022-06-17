@@ -73,5 +73,9 @@ func ml(cmd *cobra.Command, args []string) error {
 		fmt.Printf("%v (%v): %v\n\n", k, len(packagers[k]), strings.Join(packagers[k], ", "))
 	}
 
+	fmt.Printf("================================================================================\n\n")
+	for _, k := range keys {
+		fmt.Printf("%v <%v@fedoraproject.org>, ", k, k)
+	}
 	return nil
 }
