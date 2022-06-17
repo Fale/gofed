@@ -1,2 +1,4 @@
 cmd/pkgchk/pkgchk
 cmd/tpl/tpl
+pkgs
+pkgs.json
